@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="wrapper">
     <pre><output>
 ETHERNET TERMINAL INTERFACE v8.8
 Decentralized Hackerhouse OS
