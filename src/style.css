@@ -74,6 +74,13 @@ pre {
 
 body {
   animation: flicker 3s linear infinite;
+  overflow-y: scroll;
+}
+
+output {
+  text-wrap: pretty;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
 }
 
 a {
