@@ -1,0 +1,88 @@
+body {
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 128, 0, 0.85), black 120%
+  );
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 2rem;
+  color: #3f6;
+  font: 1.3rem 'Courier New', monospace;
+  text-shadow: 0 0 10px rgba(63, 255, 0, 0.8), 0 0 20px rgba(63, 255, 0, 0.8);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0px,
+      rgba(0, 0, 0, 0.7) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  &::after {
+    /* Existing styles... */
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0px,
+      rgba(0, 0, 0, 0.7) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    background-size: 100% 2px;
+  }
+}
+
+::selection {
+  background: #00ff66;
+  text-shadow: none;
+}
+
+pre {
+  margin: 0;
+  z-index: 2;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 10px rgba(63, 255, 0, 0.8), 0 0 20px rgba(63, 255, 0, 0.8);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body::after {
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0px,
+      rgba(0, 0, 0, 0.7) 0.5px,
+      transparent 0.5px,
+      transparent 1px
+    );
+    background-size: 100% 1px;
+  }
+}
+
+body {
+  animation: flicker 3s linear infinite;
+}
+
+a {
+  color: inherit; /* Inherits the color from the parent element */
+  text-decoration: none; /* Removes underline */
+  font-weight: inherit; /* Inherits font weight from the parent element */
+  font-style: inherit; /* Inherits font style from the parent element */
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: underline;
+}
